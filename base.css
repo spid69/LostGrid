@@ -1,0 +1,97 @@
+:root {
+  /* Type */
+  /*// base unit for upsizing units (recommend em or rem)*/
+  --unit: 1rem;
+  --fStack: 'Lato', 'Helvetica', sans-serif;
+  --headingFStack: 'Bad Script', cursive, 'Helvetica', sans-serif;
+  /*Base*/
+  --fSize: 1.6rem;
+  --headingFSize: calc(var(--fSize)*2);
+  --fFamily: var(--fontStack);
+  --headingFFamily: var(--headingFStack);
+  --fWeight: 400;
+  --headingFWeight: 300;
+  --lineHeight: 1.25;
+  --headingLineHeight: 2;
+  --fColor: gray(0, .8);
+  --fColorAlt: gray(255, 1);
+  --headingFColor: var(--primaryColor);
+  --linkColor: var(--primaryLightColor);
+  /*--linkColorHover: color(green blackness(-80%));*/
+  --linkColorHover: var(--primaryDarkColor);
+  /*Colors: */
+  --primaryColor: rgba(72, 209, 204, 1);
+  /*rgba(28%, 82%, 80%, 1);   #48D1CC умеренно-бирюзовый */
+  --primaryDarkColor: rgba(1, 79, 14, 1);
+  /* #014F0E */
+  --primaryLightColor: rgba(106, 205, 123, 1);
+  /* #6ACD7B*/
+  --secondaryColor: color(green a(.8) tint(10%));
+  --bgColor: rgba(235, 235, 235, 1);
+  /*rgba(0, 155, 164, 1)*/
+  --bgColorAlt: gray(0, .7);
+  --bgColorAlt-2: rgba(106, 93, 77, 1);
+  /*  #6A5D4D;-перламутрово-бежевый*/
+  --fistashColor: ;
+  /* #BEF574 */
+  --z-index: 0;
+  --margin: var(--unit);
+  --padding: var(--unit);
+  /*Border*/
+  --borderColor: gray(64, .8);
+  --borderRadius: .3rem;
+  --border: 1px solid var(--borderColor);
+  --duration: 150ms;
+  --timing: ease;
+  --delay: .1s;
+  /*Proportions */
+  --spacing: calc( var(--lineHeight) * 1rem);
+  --smallSpacing: calc(var(--spacing) / 2);
+  // Animations
+  --property: all;
+}
+
+/* Grid global options*/
+@lost gutter 30px;
+@lost flexbox flex;
+@lost cycle none;
+@lost clearing left;
+
+/*//media-query break-points (bp-) (960px/640px/480px)*/
+@custom-media --bp-small (min-width: 25em);
+@custom-media --bp-medium (max-width: 40em);
+@custom-media --bp-large (max-width: 60em);
+
+
+/*Typography Styles*/
+
+
+/*a  Links Styles*/
+
+a{
+  display: block;
+	text-decoration : none;
+	color : --linkColor;
+	background: transparency;  /*: linear-gradient($color-neutral, $color-neutral) no-repeat;*/
+	/*background-size : 100% 1px;*/
+	/*background-position : 0 1.02em;*/
+	text-shadow : .075em 0 $body-background, -.075em 0 $body-background;
+
+&:visited {
+	color : var(--linkColorVisited); }
+
+&:hover {
+	text-decoration : none;
+	color : var(--linkColorHover); }
+
+&:focus {
+	outline : thin dotted;
+	color : var(--linkColorFocus); }
+
+&:hover,
+&:active {
+	outline : 0; }
+}
+
+a:link {
+	transition : all $transition-duration $transition-timing-function; }
